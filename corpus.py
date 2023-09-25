@@ -18,7 +18,7 @@ def main():
 		write("tick")
 	
 		try:
-			messages = requests.get(f"https://discord.com/api/v9/channels/{config['channel']}/messages?limit=5", headers={"authorization": config['token']}).json()
+			messages = requests.get(f"https://discord.com/api/v9/channels/{config['channel']}/messages?limit=50", headers={"authorization": config['token']}).json()
 			for message in messages:
 				# print(json.dumps(message, indent=4))
 				if message['author']['id'] in config['blacklist']:
